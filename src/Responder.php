@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 class Responder
 {
     /**
-     * @param array<string,mixed> $data
+     * @param array<string, mixed> $data
      */
     public function success(array $data): JsonResponse
     {
@@ -21,7 +21,7 @@ class Responder
     }
 
     /**
-     * @param array<array<string,mixed>> $data
+     * @param array<array<string, mixed>> $data
      */
     public function successList(array $data, int $total, int $limit, int $offset): JsonResponse
     {
@@ -77,7 +77,7 @@ class Responder
     }
 
     /**
-     * @param array<string,string> $errors
+     * @param array<string, string> $errors
      */
     public function validationFailed(array $errors): JsonResponse
     {
