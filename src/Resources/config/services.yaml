@@ -1,0 +1,2 @@
+services:
+  Leadgid\StandardResponses\Responder:
