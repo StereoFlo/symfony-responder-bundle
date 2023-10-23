@@ -44,28 +44,12 @@ class Responder
         ], Response::HTTP_CREATED);
     }
 
-    public function noContent(): JsonResponse
-    {
-        return $this->getResponse([
-            'meta' => ['success' => true],
-            'data' => [],
-        ], Response::HTTP_NO_CONTENT);
-    }
-
     public function updated(string $id): JsonResponse
     {
         return $this->getResponse([
             'meta' => ['success' => true],
             'data' => ['id' => $id],
         ], Response::HTTP_OK);
-    }
-
-    public function accepted(string $id): JsonResponse
-    {
-        return $this->getResponse([
-            'meta' => ['success' => true],
-            'data' => ['id' => $id],
-        ], Response::HTTP_ACCEPTED);
     }
 
     public function badRequest(string $message): JsonResponse
@@ -112,38 +96,6 @@ class Responder
             'meta'  => ['success' => false],
             'error' => ['message' => $message],
         ], Response::HTTP_NOT_FOUND);
-    }
-
-    public function methodNotAllowed(): JsonResponse
-    {
-        return $this->getResponse([
-            'meta'  => ['success' => false],
-            'error' => ['message' => 'Method not allowed'],
-        ], Response::HTTP_METHOD_NOT_ALLOWED);
-    }
-
-    public function internalServerError(): JsonResponse
-    {
-        return $this->getResponse([
-            'meta'  => ['success' => false],
-            'error' => ['message' => 'Internal server error'],
-        ], Response::HTTP_INTERNAL_SERVER_ERROR);
-    }
-
-    public function badGateway(): JsonResponse
-    {
-        return $this->getResponse([
-            'meta'  => ['success' => false],
-            'error' => ['message' => 'Bad gateway'],
-        ], Response::HTTP_BAD_GATEWAY);
-    }
-
-    public function serviceUnavailable(): JsonResponse
-    {
-        return $this->getResponse([
-            'meta'  => ['success' => false],
-            'error' => ['message' => 'Service unavailable'],
-        ], Response::HTTP_SERVICE_UNAVAILABLE);
     }
 
     /**
